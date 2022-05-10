@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command: nodemon tail.js
+    volumes:
+      - .:/opt/project
+      - node_modules:/opt/project/node_modules/
+
+volumes:
+  node_modules:
+    name: node_modules
